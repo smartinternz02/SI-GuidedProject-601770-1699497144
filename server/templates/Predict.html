@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HealthToDate-Cancer</title>
+    <script
+      src="https://kit.fontawesome.com/04ec824536.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="../static/css/style.css" />
+  </head>
+
+  <body>
+    <nav>
+      <div class="logo">HealthToDate</div>
+      <label for="" class="menu-btn" id="menu">
+        <i class="fas fa-bars"></i>
+      </label>
+      <ul id="chng">
+        <li><a href="/">Home</a></li>
+        <!-- <li><a href="#"></a></li> -->
+      </ul>
+    </nav>
+    <div class="body">
+      <div class="container">
+        <div class="title">Salary Prediction</div>
+        <form action="{{ url_for('predict') }}" method="post">
+          <div class="user-details">
+            <div class="input_box">
+              <span class="details">Work Experience</span>
+              <input
+                id="can_input"
+                type="number"
+                name="work_experience"
+                placeholder="Work Experience"
+                required="required"
+              />
+            </div>
+            <div class="input_box">
+              <span class="details">Current Location</span>
+              <select
+                class="form-control"
+                id="fbs"
+                name="location"
+                required="required"
+                placeholder="Fasting Blood Sugar"
+              >
+                <option value="Mumbai">Mumbai</option>
+                <option value="New Delhi">New Delhi</option>
+                <option value="Bangalore">Bangalore</option>
+                <option value="Hyderabad">Hyderabad</option>
+                <option value="Gurgaon">Gurgaon</option>
+                <option value="Kolkata">Kolkata</option>
+                <option value="Chennai">Chennai</option>
+                <option value="Others">Others</option>
+              </select>
+            </div>
+            <div class="input_box">
+              <span class="details">Designation</span>
+              <select
+                class="form-control"
+                id="fbs"
+                name="designation"
+                required="required"
+                placeholder="Fasting Blood Sugar"
+              >
+                <option value="Dermatologist">Dermatologist</option>
+                <option value="Consultant Dermatologist">Consultant Dermatologist</option>
+                <option value="Consultant">Consultant</option>
+                <option value="Assistant Professor">Assistant Professor</option>
+                <option value="Others">Others</option>
+              </select>
+            </div>
+            <div class="input_box">
+              <span class="details">P.G Course</span>
+              <select
+                class="form-control"
+                id="fbs"
+                name="pg"
+                required="required"
+                placeholder="Fasting Blood Sugar"
+              >
+                <option value="MD">MD</option>
+                <option value="Diploma">Diploma</option>
+                <option value="PGDM">PGDM</option>
+                <option value="Others">Others</option>
+              </select>
+            </div>
+            <div class="input_box">
+              <span class="details">Post P.G Course</span>
+              <select
+                class="form-control"
+                type="number"
+                id="restecg"
+                name="restecg"
+                required="required"
+                placeholder="Resting Electro-cardiographic Result"
+              >
+                <option value="Yes Post PG">Yes Post PG</option>
+                <option value="No Post PG">No Post PG</option>
+              </select>
+            </div>  
+          </div>
+          <div class="button">
+            <button type="submit" class="btn" id="btn">Predict</button>
+            <button type="submit" class="btn2" id="btn2">
+              <i class="fas fa-trash"></i>
+            </button>
+          </div>
+        </form>
+        <h1 id="result">{{ prediction_text }} Lakhs Per Annum</h1>
+      </div>
+    </div>
+    <script type="text/javascript" src="../static/js/app.js"></script>
+    <script type="text/javascript" src="../static/js/ham.js"></script>
+  </body>
+</html>
